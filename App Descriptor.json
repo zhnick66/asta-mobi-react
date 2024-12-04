@@ -1,0 +1,106 @@
+{
+  "name": "GitLab for Jira (gitlab.diia.org.ua)",
+  "description": "Integrate commits, branches and merge requests from GitLab into Jira",
+  "key": "gitlab-jira-connect-gitlab.diia.org.ua",
+  "baseUrl": "https://gitlab.diia.org.ua/-/jira_connect",
+  "lifecycle": {
+    "installed": "/events/installed",
+    "uninstalled": "/events/uninstalled"
+  },
+  "vendor": {
+    "name": "GitLab",
+    "url": "https://gitlab.com"
+  },
+  "links": {
+    "documentation": "https://gitlab.diia.org.ua/help/integration/jira_development_panel.md#gitlabcom-1"
+  },
+  "authentication": {
+    "type": "jwt"
+  },
+  "modules": {
+    "postInstallPage": {
+      "key": "gitlab-configuration",
+      "name": {
+        "value": "GitLab Configuration"
+      },
+      "url": "/subscriptions",
+      "conditions": [
+        {
+          "condition": "user_is_admin",
+          "invert": false
+        }
+      ]
+    },
+    "jiraDevelopmentTool": {
+      "actions": {
+        "createBranch": {
+          "templateUrl": "https://gitlab.diia.org.ua/-/jira_connect/branches/route?issue_key={issue.key}&issue_summary={issue.summary}&jwt={jwt}&addonkey=gitlab-jira-connect-gitlab.diia.org.ua"
+        },
+        "searchConnectedWorkspaces": {
+          "templateUrl": "https://gitlab.diia.org.ua/-/jira_connect/workspaces/search"
+        },
+        "searchRepositories": {
+          "templateUrl": "https://gitlab.diia.org.ua/-/jira_connect/repositories/search"
+        },
+        "associateRepository": {
+          "templateUrl": "https://gitlab.diia.org.ua/-/jira_connect/repositories/associate"
+        }
+      },
+      "key": "gitlab-development-tool",
+      "application": {
+        "value": "GitLab"
+      },
+      "name": {
+        "value": "GitLab"
+      },
+      "url": "https://gitlab.com",
+      "logoUrl": "https://gitlab.diia.org.ua/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png",
+      "capabilities": [
+        "branch",
+        "commit",
+        "pull_request"
+      ]
+    },
+    "jiraBuildInfoProvider": {
+      "homeUrl": "https://gitlab.com",
+      "logoUrl": "https://gitlab.diia.org.ua/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png",
+      "documentationUrl": "https://docs.gitlab.com/ee/integration/jira/",
+      "actions": {},
+      "name": {
+        "value": "GitLab CI"
+      },
+      "key": "gitlab-ci"
+    },
+    "jiraDeploymentInfoProvider": {
+      "homeUrl": "https://gitlab.com",
+      "logoUrl": "https://gitlab.diia.org.ua/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png",
+      "documentationUrl": "https://docs.gitlab.com/ee/integration/jira/",
+      "actions": {},
+      "name": {
+        "value": "GitLab Deployments"
+      },
+      "key": "gitlab-deployments"
+    },
+    "jiraFeatureFlagInfoProvider": {
+      "homeUrl": "https://gitlab.com",
+      "logoUrl": "https://gitlab.diia.org.ua/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png",
+      "documentationUrl": "https://docs.gitlab.com/ee/integration/jira/",
+      "actions": {},
+      "name": {
+        "value": "GitLab Feature Flags"
+      },
+      "key": "gitlab-feature-flags"
+    }
+  },
+  "scopes": [
+    "READ",
+    "WRITE",
+    "DELETE"
+  ],
+  "apiVersion": 1,
+  "apiMigrations": {
+    "context-qsh": true,
+    "signed-install": true,
+    "gdpr": true
+  }
+}
