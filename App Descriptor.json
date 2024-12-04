@@ -9,7 +9,7 @@
   },
   "vendor": {
     "name": "GitLab",
-    "url": "https://gitlab.com"
+    "url": "https://gitlab.diia.org.ua"
   },
   "links": {
     "documentation": "https://gitlab.diia.org.ua/help/integration/jira_development_panel.md#gitlabcom-1"
@@ -27,7 +27,7 @@
       "conditions": [
         {
           "condition": "user_is_admin",
-          "invert": false
+          "invert": true
         }
       ]
     },
@@ -53,7 +53,7 @@
       "name": {
         "value": "GitLab"
       },
-      "url": "https://gitlab.com",
+      "url": "https://gitlab.diia.org.ua",
       "logoUrl": "https://gitlab.diia.org.ua/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png",
       "capabilities": [
         "branch",
@@ -62,7 +62,7 @@
       ]
     },
     "jiraBuildInfoProvider": {
-      "homeUrl": "https://gitlab.com",
+      "homeUrl": "https://gitlab.diia.org.ua",
       "logoUrl": "https://gitlab.diia.org.ua/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png",
       "documentationUrl": "https://docs.gitlab.com/ee/integration/jira/",
       "actions": {},
@@ -72,7 +72,7 @@
       "key": "gitlab-ci"
     },
     "jiraDeploymentInfoProvider": {
-      "homeUrl": "https://gitlab.com",
+      "homeUrl": "https://gitlab.diia.org.ua",
       "logoUrl": "https://gitlab.diia.org.ua/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png",
       "documentationUrl": "https://docs.gitlab.com/ee/integration/jira/",
       "actions": {},
@@ -82,7 +82,7 @@
       "key": "gitlab-deployments"
     },
     "jiraFeatureFlagInfoProvider": {
-      "homeUrl": "https://gitlab.com",
+      "homeUrl": "https://gitlab.diia.org.ua",
       "logoUrl": "https://gitlab.diia.org.ua/assets/gitlab_logo-2957169c8ef64c58616a1ac3f4fc626e8a35ce4eb3ed31bb0d873712f2a041a0.png",
       "documentationUrl": "https://docs.gitlab.com/ee/integration/jira/",
       "actions": {},
